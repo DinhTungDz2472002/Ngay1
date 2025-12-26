@@ -1,0 +1,70 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing:border-box;
+    
+}
+body {
+  height: 100vh;  
+  /* cursor: url('bua_1.png'), auto; */
+}
+#header{
+  display: flex;
+  justify-content: center;
+}
+#header #tong { 
+  margin: auto;
+}
+#header #name_Level{
+  margin: auto;
+}
+#header #time{
+  margin: auto;
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: dodgerblue;
+  padding: 15px;
+  gap: 30px;
+  height: 500px;
+  margin: auto auto;
+  
+}
+.container div {
+  background-color: #f1f1f1;
+  color:  #f1f1f1;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+  cursor: url('bua_1.png'), auto;
+  
+}
+
+.active{
+    /* background: url("images.jpg") center/contain no-repeat ; */
+
+    background-image: url("images.jpg") !important;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #ffeb3b !important; /* Đổi màu nền cho dễ thấy */
+    
+}
+.btn{
+    padding:10px;
+    margin: 20px;
+    background-color: dodgerblue;
+   border:none;
+   cursor: pointer;
+}
+
+.disabled{
+    display: none;
+}
+
+
+
+
