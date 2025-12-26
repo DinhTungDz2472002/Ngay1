@@ -6,11 +6,14 @@
 }
 body {
   height: 100vh;  
-  /* cursor: url('bua_1.png'), auto; */
+  background: url("manh_vuon.jpg") no-repeat bottom / cover;
+
+
 }
 #header{
   display: flex;
   justify-content: center;
+
 }
 #header #tong { 
   margin: auto;
@@ -26,44 +29,68 @@ body {
 .container {
   display: grid;
   grid-template-columns: auto auto auto;
-  background-color: dodgerblue;
   padding: 15px;
   gap: 30px;
-  height: 500px;
-  margin: auto auto;
-  
+  height: 550px;
 }
-.container div {
-  background-color: #f1f1f1;
+
+.container .item {
+background: url("pngtree-ground-hole-with-dark-grass-around-it-illustration-png-image_14325373.png") no-repeat bottom / contain;
   color:  #f1f1f1;
   padding: 10px;
   font-size: 30px;
   text-align: center;
   cursor: url('bua_1.png'), auto;
-  
+
+  position: relative;
+  overflow: hidden; /* Để giấu con chuột khi nó chui xuống */
 }
+
 
 .active{
-    /* background: url("images.jpg") center/contain no-repeat ; */
-
-    background-image: url("images.jpg") !important;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #ffeb3b !important; /* Đổi màu nền cho dễ thấy */
-    
+ 
 }
+
+.active .mouse_img{
+  background: url("R.png") no-repeat center / contain;
+  width: 120px;
+  height: 120px;
+
+  position: absolute;
+  animation-name: tranfer_Chuot;
+  animation-duration: 1.5s;
+
+  left: 50%;     /* Đưa vào giữa theo chiều ngang */
+  transform: translateX(-50%); /* Căn lề chuẩn xác 50% */
+  bottom: -30px; /* Ban đầu cho con chuột nằm ẩn hẳn dưới đáy lỗ */
+  pointer-events: none; /* Để cú click xuyên qua chuột vào lỗ */
+}
+/* chuyển động của chuột */
+  @keyframes tranfer_Chuot {
+  0% { bottom: 15px; }   /* Ở dưới */
+  20% { bottom: 35px; }    /* Chui nhanh lên */
+  80% { bottom: 35px; }    /* Đứng yên chờ bị đập */
+  100% { bottom: -5px; } /* Tự chui xuống nếu không bị đập */
+}
+.bom{
+  background: url("bom.png") no-repeat bottom / contain !important;
+}
+
 .btn{
-    padding:10px;
-    margin: 20px;
-    background-color: dodgerblue;
-   border:none;
-   cursor: pointer;
+  padding:10px;
+  margin: 20px;
+  background-color: dodgerblue;
+  border:none;
+  cursor: pointer;
 }
 
 .disabled{
     display: none;
 }
+
+
+
+
 
 
 
