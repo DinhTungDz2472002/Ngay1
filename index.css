@@ -6,7 +6,7 @@
 }
 body {
   height: 100vh;  
-  background: url("manh_vuon.jpg") no-repeat bottom / cover;
+  background: url("/img/manh_vuon.jpg") no-repeat bottom / cover;
 
 
 }
@@ -35,12 +35,12 @@ body {
 }
 
 .container .item {
-background: url("pngtree-ground-hole-with-dark-grass-around-it-illustration-png-image_14325373.png") no-repeat bottom / contain;
+background: url("./img/pngtree-ground-hole-with-dark-grass-around-it-illustration-png-image_14325373.png") no-repeat bottom / contain;
   color:  #f1f1f1;
   padding: 10px;
   font-size: 30px;
   text-align: center;
-  cursor: url('bua_1.png'), auto;
+  cursor: url('./img/bua_1.png'), auto;
 
   position: relative;
   overflow: hidden; /* Để giấu con chuột khi nó chui xuống */
@@ -52,7 +52,7 @@ background: url("pngtree-ground-hole-with-dark-grass-around-it-illustration-png-
 }
 
 .active .mouse_img{
-  background: url("R.png") no-repeat center / contain;
+  background: url("./img/R.png") no-repeat center / contain;
   width: 120px;
   height: 120px;
 
@@ -73,7 +73,7 @@ background: url("pngtree-ground-hole-with-dark-grass-around-it-illustration-png-
   100% { bottom: -5px; } /* Tự chui xuống nếu không bị đập */
 }
 .bom{
-  background: url("bom.png") no-repeat bottom / contain !important;
+  background: url("./img/bom.png") no-repeat bottom / contain !important;
 }
 
 .btn{
