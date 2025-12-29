@@ -21,6 +21,11 @@ let hienThiTong = document.getElementById("tong");
 const get_Time = document.getElementById("time");
 const get_Name_Level = document.getElementById("name_Level");
 
+let music_Background = new Audio("./audio/nhac_nen.mp3");
+let music_Thua = new Audio("./audio/thua.mp3");
+let music_Thang = new Audio("./audio/win.mp3");
+let music_DapChung = new Audio("./audio/bip.mp3");
+
 const show_Mouse = (count = 1) => {
   // 1. Xóa tất cả chuột cũ
   items.forEach((item) => {
@@ -72,6 +77,7 @@ items.forEach((item, index) => {
       items.forEach((item) => {
         item.classList.remove("active");
       });
+      music_DapChung.play();
       item.classList.add("bom");
       total = total + 10;
       hienThiTong.textContent = "Tổng điểm:" + total;
@@ -90,6 +96,8 @@ let reset = document.querySelector(".reset");
 start.addEventListener("click", () => {
   total = 0;
   time = 30;
+  music_Background.loop = true;
+  music_Background.play();
   get_Name_Level.textContent = "Level " + name_Level;
   clearIntervalId = setInterval(() => {
     show_Mouse(name_Level);
@@ -108,13 +116,15 @@ start.addEventListener("click", () => {
       });
       if (total < 100) {
         hienThiTong.textContent = "Thua rồi! Cần 100 điểm để lên cấp.";
+        music_Thua.play();
       } else {
         level = level <= 700 ? 700 : level;
         level = level - 200;
         name_Level++;
-        name_Level = name_Level > 3 ? 1 : name_Level++;
+        name_Level = name_Level > 3 ? 1 : name_Level + 1;
         hienThiTong.textContent =
           "Tổng điểm:" + total + " Thắng rồi! Qua Level " + name_Level;
+        music_Thang.play();
       }
       start.classList.remove("disabled");
       reset.classList.add("disabled");
